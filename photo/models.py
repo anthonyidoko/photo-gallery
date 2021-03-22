@@ -6,9 +6,10 @@ class Category(models.Model):
     name = models.CharField(max_length = 1000)
 
     def __str__(self):
-        return self.category
-        
+        return self.name
+
 class Picture(models.Model):
-    category = models.ForeingKey("Category", on_delete = models.CASCADE)
-    image = models.ImageField(upload_to = "pictures")
+    category = models.ForeignKey("Category", on_delete = models.CASCADE)
+    image = models.ImageField(upload_to = "media/pictures")
+    description = models.CharField(max_length = 2000)
     date_added = models.DateTimeField(default = datetime.now)
