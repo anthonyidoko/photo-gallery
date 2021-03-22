@@ -1,0 +1,1 @@
+This project is my attempt to build a photo gallery with django and css
