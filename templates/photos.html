@@ -1,3 +1,24 @@
-{%for photo in pictures%}
-<img src="{{photo.image.url}}" alt="{{photo.description}}">
-{%endfor%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/photos.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        {%for photo in pictures%}
+        <div class="images">
+            <img src="{{photo.image.url}}" alt="{{photo.description}}">
+        </div>    
+        {%endfor%}
+
+    </div>
+    
+</body>
+</html>
+
+
