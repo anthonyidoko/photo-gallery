@@ -8,12 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="title">Photo Gallery</div><br>
 
     <div class="container">
         {%for photo in pictures%}
         <div class="images">
-            <img src="{{photo.image.url}}" alt="{{photo.description}}">
-        </div>    
+            <img src="{{photo.image.url}}" alt="missing image" style = 'height:100%; width: 100%'>
+            <p class="descriptions" style="margin-top: -2px;">{{photo.description}}</p>
+        </div>
+        
         {%endfor%}
 
     </div>
