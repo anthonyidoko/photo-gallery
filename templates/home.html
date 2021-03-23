@@ -9,5 +9,13 @@
 </head>
 <body>
     <h1>Home Page</h1>
+    <ul><h2>Categories</h2>
+        {% for category in categories%}
+        
+        <li><a href = "{{category.name}}">{{category.name}}</a></p>
+        
+        {%endfor%}
+    </ul>
+
 </body>
 </html>
