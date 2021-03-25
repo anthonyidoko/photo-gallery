@@ -14,15 +14,17 @@
         <h2 style="text-align: center;">Categories</h2>
         {% for category in categories%}
         <div class="categories">
-            <p class = 'items'><a style="text-decoration: none;" href = "photos/{{category.id}}/">{{category.name}}</a></p>
+            <p class = 'items'><a href = "photos/{{category.id}}/">{{category.name}}</a></p>
         </div>
         {%endfor%}
 
     </div>
     <a href="/create_category">
         Create category</a>
-        or <br>Choose a category
-    </h3>
+
+    or
+
+    <a href="/userform">Add Photo</a>
 
 
     

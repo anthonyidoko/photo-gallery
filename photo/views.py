@@ -4,8 +4,19 @@ from .models import Category, Picture
 from .forms import UserPictureUpload,UserCategoryForm
 # Create your views here.
 def create_category_view(request):
-    form = UserCategoryForm
+    form = UserCategoryForm()
+    if request.method == "POST":
+        form = UserCategoryForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.info(request,"category created")
+            return redirect("/")
+        else:
+            messages.info("invalid entry")
+            return redirect(".")
+
     return render(request,'create_category.html',{"form":form})
+
 def home_view(request):
     categories = Category.objects.all()
     new = Category.objects.create()
