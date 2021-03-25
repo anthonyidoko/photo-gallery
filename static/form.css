@@ -1,0 +1,9 @@
+form{
+    display: flex;
+    flex-direction: row;
+}
+
+#category{
+    background-color: rgb(85, 158, 221);
+
+}

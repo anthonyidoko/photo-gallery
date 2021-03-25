@@ -8,11 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {%csrf_token%}
-        {{form2.as_p}}
+        <input type="hidden" name = 'category' >
         {{form.as_p}}
-        <input type="button" value="Save">
+        <input type="submit" value="Save">
     </form>
 </body>
 </html>

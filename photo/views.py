@@ -1,12 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib import messages
 from .models import Category, Picture
 from .forms import UserPictureUpload,UserCategoryForm
 # Create your views here.
-
+def create_category_view(request):
+    form = UserCategoryForm
+    return render(request,'create_category.html',{"form":form})
 def home_view(request):
     categories = Category.objects.all()
+    new = Category.objects.create()
+    context = {"categories": categories,"new":new}
 
-    return render(request,"home.html",{"categories":categories})
+    return render(request,"home.html",context)
 
 
 def photos_view(request,pk):
@@ -20,6 +25,15 @@ def photos_view(request,pk):
     return render(request, "photos.html", context)
 
 def user_form_view(request):
-    form = UserPictureUpload
-    form2 = UserCategoryForm
-    return render(request, "form.html", {'form': form, 'form2': form2})
+    if request.method == "POST":
+        form = UserPictureUpload(data=request.POST,files=request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.info(request,"successfully saved")
+            return redirect(".")
+        else:
+            messages.info(request,"invalid entry")
+            UserPictureUpload()
+    else:
+        form = UserPictureUpload
+        return render(request, "form.html", {'form': form})

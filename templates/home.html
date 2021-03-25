@@ -9,13 +9,23 @@
 </head>
 <body>
     <h1>Home Page</h1>
-    <ul><h2>Categories</h2>
+    
+    <div class="container">
+        <h2 style="text-align: center;">Categories</h2>
         {% for category in categories%}
-        
-        <li><a href = "photos/{{category.id}}/">{{category.name}}</a></p>
-        
+        <div class="categories">
+            <p class = 'items'><a style="text-decoration: none;" href = "photos/{{category.id}}/">{{category.name}}</a></p>
+        </div>
         {%endfor%}
-    </ul>
+
+    </div>
+    <a href="/create_category">
+        Create category</a>
+        or <br>Choose a category
+    </h3>
+
+
+    
 
 </body>
 </html>
