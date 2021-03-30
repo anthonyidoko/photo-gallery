@@ -11,20 +11,23 @@ def create_category_view(request):
             form.save()
             messages.info(request,"category created")
             return redirect("/")
-        else:
-            messages.info("invalid entry")
-            return redirect(".")
-
-    return render(request,'create_category.html',{"form":form})
+    else:
+        return render(request,'create_category.html',{"form":form})
 
 def home_view(request):
     categories = Category.objects.all()
-    new = Category.objects.create()
-    context = {"categories": categories,"new":new}
+    if request.method == "POST":
+        new = Category.objects.create()
+        context = {"categories": categories, "new": new}
 
+    context = {"categories": categories}
     return render(request,"home.html",context)
 
+def all_photos_view(request):
+    all_pictures = Picture.objects.all()
+    return render(request, "all_photos.html", {"all_pictures": all_pictures})
 
+    
 def photos_view(request,pk):
     category = Category.objects.get(id=pk)
     pictures = Picture.objects.filter(category = category)

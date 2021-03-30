@@ -8,23 +8,28 @@
     <title>Photo Gallery</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <header></header>
     
-    <div class="container">
-        <h2 style="text-align: center;">Categories</h2>
-        {% for category in categories%}
-        <div class="categories">
-            <p class = 'items'><a href = "photos/{{category.id}}/">{{category.name}}</a></p>
-        </div>
-        {%endfor%}
+        
+   
+    <section class="container"> 
+            <h1 class="title">Categories</h1>
+            <div class="item" id="one"><a href="photos/{{all_pictures}}" id="all">All</a></div>
+            <div class="item1," id="photos">
+                {% for category in categories%}
+                    <a href = "photos/{{category.id}}/" id = 'items'>{{category.name}}</a>
+                    {%endfor%}
+            </div>
+            <div class="item" id="last">
+                <a href="/create_category">
+                    Create category</a>
+                
+                or <br> 
+                
+                <a href="/userform">Add Photo</a>
+            </div>
+    </section>
 
-    </div>
-    <a href="/create_category">
-        Create category</a>
-
-    or
-
-    <a href="/userform">Add Photo</a>
 
 
     

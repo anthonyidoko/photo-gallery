@@ -1,0 +1,22 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'photos.css'%">
+    <title>All my photos</title>
+</head>
+<body>
+    <h1 class="title">All Categories</h1>
+    <div class="container">
+        {%for picture in all_pictures%}    
+        <figure class="images">
+            <img src="{{picture.image.url}}" alt="{{picture.description}}">
+            <figcaption>{{picture.description}}</figcaption>
+        </figure>
+        {%endfor%}
+    </div>
+    
+</body>
+</html>

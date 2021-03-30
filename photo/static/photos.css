@@ -37,3 +37,15 @@ body{
     color: whitesmoke;
     font-size: 2.5rem;
 }
+
+a{
+    text-decoration: none;
+}
+.container2{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}

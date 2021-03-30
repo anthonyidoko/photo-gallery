@@ -1,0 +1,17 @@
+<h1>Signup Page</h1>
+<form method="POST">
+    {%csrf_token%}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" placeholder="Username"> <br>
+    <label for="first_name">First name</label>
+    <input type="text" name="first_name" id="first_name" placeholder="First Name"> <br>
+    <label for="last_name">Last name</label>
+    <input type="text" name="last_name" id="last_name" placeholder="Last Name"> <br>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email address"> <br>
+    <label for="password1">Password</label>
+    <input type="password" name="password1" id="password1" placeholder="password"> <br>
+    <label for="password2">Password</label>
+    <input type="password" name="pasword2" id="password2" placeholder="recomfirm password"> <br> <br>
+    <button type="submit">Login</button>
+</form>
