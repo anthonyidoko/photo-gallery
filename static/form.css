@@ -1,9 +1,17 @@
-form{
+body{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(131, 138, 143);
+    width: 100vw;
+    align-items: center;
+    
+}
+.form{
+    
+    width: 50%;
+    
+
 }
 
-#category{
-    background-color: rgb(85, 158, 221);
 
-}

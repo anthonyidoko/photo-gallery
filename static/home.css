@@ -1,17 +1,29 @@
-body{
-    background-color: rgb(154, 174, 194);
+.title{
+    color: rgb(100, 17, 17);
+    text-align: center;
 }
-.container{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-auto-rows: 200px;
-    grid-template-areas: 
-    "c c c e e e e e e c c c";
+.item1{
+    border: 5px solid grey;
+    display: flex;
+    flex-wrap: grid;
+    margin: 40px;   
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 300px;
+    
 }
-h2 {
-    grid-area:cec
+#items {
+  
+    
+   
+    
+}
+a{
+    text-decoration: none;
+    
+   
 }
 
-.items {
-    grid-area: c;
-}
+
+
+
+

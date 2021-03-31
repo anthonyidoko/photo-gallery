@@ -13,7 +13,7 @@ def login_view(request):
             return redirect("/")
         else:
             messages.info(request,"invalid user")
-            return redirect('.')
+            return redirect('/accounts/login')
     
     return render(request, "login.html") 
 
@@ -32,16 +32,16 @@ def signup_view(request):
 
         if password1 != password2:
             messages.info(request,"password does not match")
-            return redirect('.')
+            return redirect('/accounts/signup')
         elif len(password1) < 6:
             messages.info(request, "password too short")
-            return redirect('.')
+            return redirect('/accounts/signup')
         elif email == User.objects.filter(email=email):
             messages.info(request, "email unavailable")
-            return redirect('.')
+            return redirect('/accounts/signup')
         elif username == User.objects.filter(username=username):
             messages.info(request, "username unavailable")
-            return redirect('.')
+            return redirect('/accounts/signup')
         else:
             user = User.objects.create_user(username = username,first_name=first_name,last_name=last_name,email=email,password=password1)
             messages.info(request,"user has been created")
